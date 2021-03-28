@@ -1,46 +1,41 @@
 <template>
     <div>
-        <ul>
-            <li v-for="(item,index) in lists"
-                @click="choose(index)"
-                :class="{active: index === current && current !== ' '}"
-                :key="index">
-                {{item}}
-            </li>
-        </ul>
-        <button type="button" @click="add()">tianjia</button>
-        <ul>
-            <li v-for="(item,index) in target" :key="index">{{ item }}</li>
-        </ul>
+        <Header class="header"></Header>
+        <IndexBanner/>
+        <IndexTopic/>
+        <IndexPost/>
+        <Footer class="footer"></Footer>
     </div>
 </template>
 
 <script>
+import Header from '@/components/Header/Header.vue'
+import IndexBanner from '@/components/Index/IndexBanner'
+import Footer from '@/components/Footer/Footer'
+import IndexTopic from '@/components/Index/IndexTopic'
+import IndexPost from '@/components/Index/IndexPost'
+
 export default {
-  name: 'Test',
-  // current: '',
-  data () {
-    return {
-      current: '',
-      lists: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      target: []
-    }
-  },
-  methods: {
-    choose (index) {
-      this.current = index
-    },
-    add () {
-      if (this.current === '') { return }
-      this.target.push(this.lists[this.current])
-      this.current = ''
-    }
+  name: 'Index',
+  components: {
+    Header,
+    IndexBanner,
+    IndexTopic,
+    IndexPost,
+    Footer
   }
 }
 </script>
 
-<style scoped>
-    li.active {
-        background: green;
+<style scoped lang="scss">
+    $blue : #1875e7;
+    .header{
+        background-color: $blue;
+        margin: 0;
+        padding: 0;
+    }
+    .footer{
+        background-color: $blue;
+        height: 100px;
     }
 </style>
