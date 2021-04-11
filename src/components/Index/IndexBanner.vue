@@ -65,6 +65,16 @@ export default {
 </script>
 
 <style scoped>
+    /*.banner {*/
+    /*    position: relative;*/
+    /*    overflow: hidden;*/
+    /*    margin:20px 0;*/
+    /*}*/
+    /*@media all and (min-width: 900px) {*/
+    /*    .wrap {*/
+    /*        height: 280px;*/
+    /*    }*/
+    /*}*/
     .banner{
         margin:20px 0;
     }
