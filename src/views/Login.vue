@@ -55,7 +55,7 @@ export default {
         localStorage.setItem('password', this.password)
         this.isReg = false
       } else {
-        alert('两次密码输入不一致。')
+        alert('两次密码输入不一致')
       }
     }
   }
